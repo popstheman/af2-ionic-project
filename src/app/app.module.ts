@@ -6,6 +6,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {AngularFireModule} from "angularfire2";
+
+// AF2 Settings
+export const firebaseConfig = {
+  apiKey: "AIzaSyDn3sEy2k1PbDtYYGxzRlHnBpbXZPGDcgI",
+  authDomain: "af2-lists-a95a8.firebaseapp.com",
+  databaseURL: "https://af2-lists-a95a8.firebaseio.com",
+  projectId: "af2-lists-a95a8",
+  storageBucket: "",
+  messagingSenderId: "790526392999"
+};
 
 @NgModule({
   declarations: [
@@ -14,8 +25,10 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
+
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
